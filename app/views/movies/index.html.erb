@@ -1,0 +1,28 @@
+<div class="movies_index_content">
+  <h1>Movies List</h1>
+
+  <p>
+    <%= link_to 'Add new movie', new_movie_path %>
+  </p>
+
+  <div class="movies_list">
+    <% @movies.each do |movie| %>
+      <div class="movie_record">
+        <p class="title"><%= movie.title %></p>
+        <p class="release"><%= movie.release %></p>
+        <p class="duration"><%= movie.duration %></p>
+        <p class="description"><%= movie.description %></p>
+        <p class="genres"><%= movie.genres %></p>
+        <p class="director"><%= movie.director %></p>
+        <p class="writers"><%= movie.writers %></p>
+        <p class="country_of_origin"><%= movie.country_of_origin %></p>
+        <p class="show"><%= link_to 'Show', movie_path(movie) %></p>
+        <p class="edit"><%= link_to 'Edit', edit_movie_path(movie) %></p>
+        <p class="destroy"><%= link_to 'Destroy', movie_path(movie),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?'}
+         %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

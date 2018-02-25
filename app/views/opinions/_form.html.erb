@@ -1,0 +1,27 @@
+<h3>Add Opinion</h3>
+
+<%= render 'errors', model: @opinion %>
+
+<%= form_for [@movie,@opinion] do |f| %>
+
+  <p>
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.label :user_surname %>
+    <%= f.text_field :user_surname %>
+  </p>
+  <p>
+    <%= f.label :rate %>
+    <%= f.select :rate, options_for_select(1..10) %>
+  </p>
+  <p>
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

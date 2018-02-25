@@ -1,0 +1,17 @@
+<p>
+  <strong>Name and Surname</strong>
+  <%= opinion.user_name %>
+  <%= opinion.user_surname %>
+  <strong>Rate:</strong>
+  <%= opinion.rate %>
+</p>
+<p>
+  <strong>Comment:</strong>
+    <%= opinion.comment %>
+<p>
+<p>
+  <%= link_to 'Delete', movie_opinion_path(@movie, opinion),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' }
+                        %>
+</p>

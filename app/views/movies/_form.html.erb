@@ -1,0 +1,45 @@
+<p>
+  <%= link_to 'Back', movies_path %>
+</p>
+
+<p>
+  <%= render 'errors', model: @movie %>
+</p>
+
+<%= form_for @movie do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :release %><br />
+    <%= f.date_select :release, :start_year=>1887 %>
+  </p>
+  <p>
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :genres %><br />
+    <%= f.text_field :genres %>
+  </p>
+  <p>
+    <%= f.label :director %><br />
+    <%= f.text_field :director %>
+  </p>
+  <p>
+    <%= f.label :writers %><br />
+    <%= f.text_field :writers %>
+  </p>
+  <p>
+    <%= f.label :country_of_origin %><br />
+    <%= f.text_field :country_of_origin %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,39 @@
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+<p>
+  <strong>Release:</strong>
+  <%= @movie.release %>
+</p>
+<p>
+  <strong>Duration:</strong>
+  <%= @movie.duration %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+<p>
+  <strong>genres:</strong>
+  <%= @movie.genres %>
+</p>
+<p>
+  <strong>Director:</strong>
+  <%= @movie.director %>
+</p>
+<p>
+  <strong>Writers:</strong>
+  <%= @movie.writers %>
+</p>
+<p>
+  <strong>Country:</strong>
+  <%= @movie.country_of_origin %>
+</p>
+<%= link_to 'Back', movies_path %>
+
+<h2>Opinions</h2>
+
+<%= render @movie.opinions.order(created_at: :desc) %>
+
+<%= render 'opinions/form' %>
