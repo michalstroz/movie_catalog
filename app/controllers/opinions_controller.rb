@@ -1,5 +1,5 @@
 class OpinionsController < ApplicationController
-  http_basic_authenticate_with name: 'admin', passowrd: 'secret', only: [:destroy]
+  http_basic_authenticate_with name: 'admin', password: 'secret1', only: [:destroy]
 
   before_action :provide_movie, only: [:create, :destroy]
 
