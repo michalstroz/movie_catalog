@@ -4,7 +4,7 @@ http_basic_authenticate_with name: 'admin', password: 'secret1', except: [:index
 before_action :provide_movie, only: [:show, :edit, :update, :destroy]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.where('lower(title) LIKE ?', "%#{params[:title].downcase}%")
   end
 
   def show

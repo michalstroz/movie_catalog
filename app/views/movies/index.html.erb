@@ -1,6 +1,10 @@
 <div class="movies_index_content">
-  <h1>Movies List</h1>
 
+  <h1>Movies List</h1>
+  <%= form_tag(movies_path, method: :get) do %>
+    <%= text_field_tag :title, params[:title] %>
+    <%= submit_tag 'Search', title: nil %>
+  <% end %>
   <p>
     <%= link_to 'Add new movie', new_movie_path %>
   </p>
